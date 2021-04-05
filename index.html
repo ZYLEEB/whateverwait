@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>反正等一下</title>
+</head>
+<script src="jquery-3.5.1.js"></script>
+<script src="jquery-ui.js"></script>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>反正等一下</h1>
+            <div id="info">
+                <p id="info_no_speech">未偵測到內容，你可能需要調整<a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">麥克風設定</a>.</p>
+                <p id="info_no_microphone" style="display:none">未偵測到麥克風，請確認麥克風確實安裝或檢查
+                    <ahref="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">麥克風設定</a> 是否正常</p>
+                <p id="info_denied">嘗試使用麥克風被拒絕</p>
+                <p id="info_blocked">Permission to use microphone is blocked. To change, go to chrome://settings/contentExceptions#media-stream</p>
+                <p id="info_upgrade">Web Speech API is not supported by this browser. Upgrade to <a href="//www.google.com/chrome">Chrome</a>version 25 or later.</p>
+            </div>
+        </div>
+
+        <div id="board">
+            <div class="countBoard">
+                <p>反正</p>
+                <p class="countNumber" id="反正">0</p>
+            </div>
+            <div class="countBoard">
+                <p>等一下</p>
+                <p class="countNumber" id="等一下">0</p>
+            </div>
+        </div>
+
+        <div id="results">
+            <span id="final_span">使用步驟<br>1.選擇語言與方言<br>2.新增偵測文字<br>3.按下開始上課<br></span>
+            <span id="interim_span" class="interim"></span>
+        </div>
+
+        <div id="choice">
+
+            <select id="select_language" onchange="updateCountry()"></select> &nbsp;&nbsp;
+            <select id="select_dialect"></select>
+
+            <input type="text" id="detect" placeholder="新增偵測文字">
+            <span class="button" id="addButton" onclick="addDetect()">新增</span>
+
+
+            <label class="button" id="start_button" onclick="startButton(event)">開始上課</label>
+
+            <p class="button" id="clearButton" onclick="clearButton()">清空記錄</p>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
